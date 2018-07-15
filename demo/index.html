@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pushbar.js demo</title>
+	<meta name="description" content="Pushbar.js is a tiny javascript plugin for creating sliding drawers in web apps">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+	<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+	<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../pushbar/pushbar.css">
+	<link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+<body>
+
+	<aside data-pushbar-id="left" class="pushbar from_left">
+		<div class="title"><span data-pushbar-close class="close push_right"></span> Left sidebar menu</div>
+
+		<ul class="menu">
+		  <li>Home</li>
+		  <li>Products</li>
+		  <li>About</li>
+		  <li>Contact</li>
+		  <li>Github</li>
+		</ul>
+
+	</aside>
+
+	<aside data-pushbar-id="right" class="pushbar from_right">
+		<div class="title"><span data-pushbar-close class="close push_right"></span> Right</div>
+	</aside>
+
+	<aside data-pushbar-id="top" class="pushbar from_top">
+		<div class="title"><span data-pushbar-close class="close push_right"></span> Top</div>
+	</aside>
+
+	<aside data-pushbar-id="bottom" class="pushbar from_bottom">
+		<div class="title"><span data-pushbar-close class="close push_right"></span> Bottom</div>
+
+	</aside>
+
+
+<main class="pushbar_main_content">
+	<div class="wrapper">
+		<div class="card">
+			<div class="card_title">
+				Pushbar.js
+			
+				<div class="small" style="margin-top: 10px;">Pushbar.js is a tiny javascript plugin for creating sliding drawers in web apps</div>
+				<div class="small">It is fully customizable and dependency free.You can use it as sidebar menus or option drawers.</div>
+				<div><a href="#" class="button" style="margin-top: 10px;background:#fff;color:blue;border-color: #fff;">Get it</a></div>
+			</div>
+			<div class="card_content">
+				<div><button data-pushbar-target="left">Left pushbar</button></div>
+				<div><button data-pushbar-target="right">Right pushbar</button></div>
+				<div><button data-pushbar-target="top">Top pushbar</button></div>
+				<div><button data-pushbar-target="bottom">Bottom pushbar</button></div>
+			
+
+
+
+
+
+					<pre><code>
+						<strong>Installation</strong>
+						<br>
+						<br>
+						
+						<ol>
+							<li>Add the pushbar.css file to the head of your html.</li>
+							<li>Add the pushbar.js file to the head of your html or right before the closing body tag.</li>
+							<li>Add this code after the pushbar.js script tag to initialize the plugin.<br>
+									
+							<textarea disabled>
+								<script type="text/javascript">
+										&nbsp new Pushbar({
+										&nbsp &nbsp	blur:true,
+										&nbsp &nbsp	overlay:true,
+										&nbsp });
+								</script>
+							</textarea>
+
+
+							</li>
+						</ol>
+					
+					</code></pre>
+
+					<pre><code>
+						<strong>Example html</strong>
+						<br>
+						<br>
+							<textarea disabled style="min-height: 550px;">
+								&nbsp <div data-pushbar-id="mypushbar1" class="pushbar from_left">
+									&nbsp &nbsp	Push bar content 1
+
+									&nbsp &nbsp	<button data-pushbar-close>Close</button>
+								&nbsp </div>
+
+								&nbsp <div data-pushbar-id="mypushbar2" class="pushbar from_bottom">
+									&nbsp &nbsp	Push bar content 2
+
+									&nbsp &nbsp	<button data-pushbar-close>Close</button>
+								&nbsp </div>
+
+								&nbsp <div class="pushbar_main_content">
+									&nbsp &nbsp	Main content of the page
+
+									&nbsp &nbsp	<button data-pushbar-target="mypushbar1">
+									&nbsp &nbsp	Open my pushbar 1
+									&nbsp &nbsp	</button>
+
+									&nbsp &nbsp	<button data-pushbar-target="mypushbar2">
+									&nbsp &nbsp	Open my pushbar 2
+									&nbsp &nbsp	</button>
+								&nbsp </div>
+							</textarea>
+					</code></pre>
+
+					<pre><code>
+						<strong>How to use</strong>
+						<br>
+						<br>
+							<p>Your pushbar must have the class .pushbar and any of the directional classes: .from_left, .from_right, .from_top, .from_bottom to set the opening direction.</p>
+							<p>Pushbar also must have an attribute : data-pushbar-id , which must have a unique value for that pushbar.</p>
+							<p>Your pushbar open button must have an attribute : data-pushbar-target, with the name of the pushbar as value (same value as data-pushbar-id).</p>
+							<p>data-pushbar-close attribute can be used on any element to make it a close button for all pushbars.</p>
+							<p>Your main content must have the class .pushbar_main_content.</p>
+						
+					</code></pre>
+
+
+
+
+
+					<pre><code>
+						<strong>Options</strong>
+						<br>
+						<br>
+						
+						<ol>
+							<li>blur : set it to true for blur effect on the main content (Default:false)</li>
+							<li>overlay : set it to true for dark overlay effect on the main content (Default:true)</li>
+							</li>
+						</ol>
+						
+					</code></pre>
+
+					<pre><code>
+						<strong>API</strong>
+						<br>
+						<br>
+
+							Open and close pushbar with api
+							<textarea disabled style="min-height: 300px;">
+								<script type="text/javascript">
+									var pushbar = &nbsp new Pushbar({
+										&nbsp &nbsp	blur:true,
+										&nbsp &nbsp	overlay:true,
+										&nbsp });
+
+									//open a pushbar
+									pushbar.open('mypushbar1');	
+									//close all pushbars
+									pushbar.close();	
+								</script>
+							</textarea>
+						
+					</code></pre>
+
+
+					<pre><code>
+						<strong>Emitted events</strong>
+						<br>
+						<br>
+
+							<p>'pushbar_opening': when a pushbar is opening, that pushbar element will emit this event.</p>
+							<p>'pushbar_closing': when a pushbar is closing, that pushbar element will emit this event.</p>
+						
+					</code></pre>
+
+
+					<pre><code>
+						<strong>Important CSS classes for modification</strong>
+						<br>
+						<br>
+						
+						<ol>
+							<li>.from_left, .from_right: change the width for your sidebars.</li>
+							<li>.from_top, .from_bottom: change the height for your top and bottom bars.</li>
+							<li>.pushbar_overlay: change the background and opacity for the overlay.</li>
+							</li>
+						</ol>
+						
+					</code></pre>
+
+
+			</div>
+
+		</div>
+	</div>
+</main>
+
+<script type="text/javascript" src="../pushbar/pushbar.js"></script>	
+<script type="text/javascript">
+	new Pushbar({
+		blur:true,
+		overlay:true,
+	});
+</script>
+</body>
+</html>
