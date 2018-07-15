@@ -5,7 +5,7 @@ It is fully customizable and dependency free.You can use it as sidebar menus or 
 
 [Demo](https://oncebot.github.io/pushbar.js/)
 
-![Pushbar. animated](https://oncebot.github.io/pushbar.js/pushbar.js.gif)
+![Pushbar. animated](https://oncebot.github.io/pushbar.js/animated.pushbar.js.gif)
 
 
 
