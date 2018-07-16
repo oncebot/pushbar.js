@@ -16,7 +16,7 @@ It is fully customizable and dependency free.You can use it as sidebar menus or 
 3. Add this code after the pushbar.js script tag to initialize the plugin.
 ```
 <script type="text/javascript">
-      new Pushbar({
+  var pushbar = new Pushbar({
         blur:true,
         overlay:true,
       });
@@ -51,14 +51,6 @@ It is fully customizable and dependency free.You can use it as sidebar menus or 
   </div>
  ```
 
-### How to use 
-
-* Your pushbar must have the class .pushbar and any of the directional classes: .from_left, .from_right, .from_top, .from_bottom to set the opening direction.
-* Pushbar also must have an attribute : data-pushbar-id , which must have a unique value for that pushbar.
-* Your pushbar open button must have an attribute : data-pushbar-target, with the name of the pushbar as value (same value as data-pushbar-id).
-* data-pushbar-close attribute can be used on any element to make it a close button for all pushbars.
-* Your main content must have the class .pushbar_main_content.
-
 ### Options
 
 1. blur : set it to true for blur effect on the main content (Default:false)
@@ -85,10 +77,5 @@ Open and close pushbar with api
 * 'pushbar_opening': when a pushbar is opening, that pushbar element will emit this event.
 * 'pushbar_closing': when a pushbar is closing, that pushbar element will emit this event.
 
-### Important CSS classes for modification 
-
-* .from_left, .from_right: change the width for your sidebars.
-* .from_top, .from_bottom: change the height for your top and bottom bars.
-* .pushbar_overlay: change the background and opacity for the overlay.
 
 [Oncebot](https://oncebot.com)

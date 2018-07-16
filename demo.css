@@ -54,7 +54,7 @@ textarea{
 	margin:20px;
     border-radius: 5px;
     background:#fff;
-	box-shadow:0px 0px 20px rgba(0, 0, 0, 0.15)
+	box-shadow:0px 0px 20px rgba(0, 0, 0, 0.1)
 }
 .card_title,.title,.pushbar{
     background: #4039ff;
@@ -71,6 +71,12 @@ border-radius: 4px 4px 0px 0px;
 .card_content{
 	padding: 15px;
 }
+a.button.getBtn{
+margin-top: 16px;background-color:#fff;color:#4039ff;border-color: #fff;
+}
+
+
+
 
 .pushbar{
 

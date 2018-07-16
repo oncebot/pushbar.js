@@ -58,7 +58,7 @@
 			
 				<div class="small" style="margin-top: 10px;">Pushbar.js is a tiny javascript plugin for creating sliding drawers in web apps</div>
 				<div class="small">It is fully customizable and dependency free.You can use it as sidebar menus or option drawers.</div>
-				<div><a href="https://github.com/oncebot/pushbar.js" target="_blank" class="button" style="margin-top: 10px;background:#fff;color:blue;border-color: #fff;">Get it</a></div>
+				<div><a href="https://github.com/oncebot/pushbar.js" target="_blank" class="button getBtn">Get it</a></div>
 			</div>
 			<div class="card_content">
 				<div><button data-pushbar-target="left">Left pushbar</button></div>
@@ -127,7 +127,7 @@
 							</textarea>
 					</code></pre>
 
-					<pre><code>
+<!-- 					<pre><code>
 						<strong>How to use</strong>
 						<br>
 						<br>
@@ -137,7 +137,7 @@
 							<p>data-pushbar-close attribute can be used on any element to make it a close button for all pushbars.</p>
 							<p>Your main content must have the class .pushbar_main_content.</p>
 						
-					</code></pre>
+					</code></pre> -->
 
 
 
@@ -189,7 +189,7 @@
 						
 					</code></pre>
 
-
+<!-- 
 					<pre><code>
 						<strong>Important CSS classes for modification</strong>
 						<br>
@@ -202,7 +202,7 @@
 							</li>
 						</ol>
 						
-					</code></pre>
+					</code></pre> -->
 
 
 			</div>
@@ -214,7 +214,7 @@
 
 <script type="text/javascript" src="pushbar/pushbar.js"></script>	
 <script type="text/javascript">
-	new Pushbar({
+	var pushbar = new Pushbar({
 		blur:true,
 		overlay:true,
 	});
