@@ -26,7 +26,6 @@ class Pushbar {
   
   get activeBarId() {
     const { activeBar } = this;
-    debugger;
     return activeBar instanceof HTMLElement && activeBar.getAttribute('data-pushbar-id');
   }
 
