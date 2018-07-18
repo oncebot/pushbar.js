@@ -23,6 +23,11 @@ class Pushbar {
     const { activeBar } = this;
     return Boolean(activeBar instanceof HTMLElement && activeBar.classList.contains('opened'));
   }
+  
+  get activeBarId() {
+    const { activeBar } = this;
+    return Number(activeBar instanceof HTMLElement && activeBar.getAttribute('pushbar-id'));
+  }
 
   static dispatchOpen(pushbar) {
     const event = new CustomEvent('pushbar_opening', { bubbles: true, detail: { pushbar } });
@@ -71,9 +76,21 @@ class Pushbar {
   }
 
   open(pushbarId) {
+    // Current bar is already opened
+    if (pushbarId === this.activeBarId && this.opened) {
+      return;
+    }
+    
+    // Get new pushbar target
     const pushbar = Pushbar.findElementById(pushbarId);
-    if (!pushbar) return;
 
+    if (!pushbar) return;
+    
+    // If opened, dispatch event & close active bar
+    if (this.opened) {
+      this.close();
+    }
+    
     Pushbar.dispatchOpen(pushbar);
     pushbar.classList.add('opened');
 
@@ -86,14 +103,14 @@ class Pushbar {
   close() {
     const { activeBar } = this;
     if (!activeBar) return;
-
+    
+    Pushbar.dispatchClose(activeBar);
     activeBar.classList.remove('opened');
 
     const Root = document.querySelector('html');
     Root.classList.remove('pushbar_locked');
     Root.removeAttribute('pushbar');
-
-    Pushbar.dispatchClose(activeBar);
+    
     this.activeBar = null;
   }
 }
