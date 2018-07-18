@@ -26,7 +26,8 @@ class Pushbar {
   
   get activeBarId() {
     const { activeBar } = this;
-    return Number(activeBar instanceof HTMLElement && activeBar.getAttribute('pushbar-id'));
+    debugger;
+    return activeBar instanceof HTMLElement && activeBar.getAttribute('data-pushbar-id');
   }
 
   static dispatchOpen(pushbar) {
@@ -77,7 +78,7 @@ class Pushbar {
 
   open(pushbarId) {
     // Current bar is already opened
-    if (pushbarId === this.activeBarId && this.opened) {
+    if (String(pushbarId) === this.activeBarId && this.opened) {
       return;
     }
     
@@ -86,7 +87,7 @@ class Pushbar {
 
     if (!pushbar) return;
     
-    // If opened, dispatch event & close active bar
+    // Close active bar (if exists)
     if (this.opened) {
       this.close();
     }
@@ -114,3 +115,4 @@ class Pushbar {
     this.activeBar = null;
   }
 }
+
