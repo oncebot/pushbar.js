@@ -21,18 +21,6 @@ html.pushbar_locked{
 	will-change: transform;
 	background:#fff;
 }
-::-webkit-scrollbar {
-	width: 5px;
-}
-
-::-webkit-scrollbar-track {
-	background:rgba(0,0,0,0.1);
-}
-
-::-webkit-scrollbar-thumb {
-	background:rgba(0,0,0,0.1);
-	border-radius:100px;
-}
 .pushbar_overlay{
 	z-index: -999;
 	position: fixed;
