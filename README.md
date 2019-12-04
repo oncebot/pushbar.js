@@ -10,6 +10,7 @@ It is fully customizable and dependency free.You can use it as sidebar menus or 
 1. It's now even smaller and more effitient
 2. Code is now beautified
 3. Added to NPM
+4. Added to CDN
 
 [Demo](https://oncebot.github.io/pushbar.js/)
 
