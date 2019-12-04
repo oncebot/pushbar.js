@@ -18,8 +18,8 @@ It is fully customizable and dependency free.You can use it as sidebar menus or 
 
 ### Installation
 
-1. Add the pushbar.css file to the head of your html.
-2. Add the pushbar.js file to the head of your html or right before the closing body tag.
+1. Add the pushbar.css file to the head of your html. CDN : `https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.css`.
+2. Add the pushbar.js file to the head of your html or right before the closing body tag. CDN `https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.js`
 3. Add this code after the pushbar.js script tag to initialize the plugin.
 
 ```
