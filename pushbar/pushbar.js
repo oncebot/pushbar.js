@@ -64,7 +64,6 @@ class Pushbar {
         const pageRootElement = document.querySelector('html')
         pageRootElement.classList.add('pushbar_locked');
         pageRootElement.setAttribute('pushbar', pushbarId)
-        this.activeId = pushbarId;
     }
 
     close() {
