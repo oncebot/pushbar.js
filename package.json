@@ -1,0 +1,22 @@
+{
+  "name": "pushbar.js",
+  "version": "1.0.0",
+  "description": "Tiny javascript plugin for creating sliding drawers in web apps",
+  "main": "src/pushbar.js",
+  "style": "src/pushbar.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oncebot/pushbar.js.git"
+  },
+  "keywords": [
+    "javascript",
+    "drawer-navigation",
+    "slide-menu"
+  ],
+  "author": "oncebot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oncebot/pushbar.js/issues"
+  },
+  "homepage": "https://github.com/oncebot/pushbar.js#readme"
+}
