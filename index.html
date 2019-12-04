@@ -42,7 +42,10 @@
 		<div class="wrapper">
 			<div class="card">
 				<div class="card_title">
-					Pushbar.js
+					<div style="display: flex;">
+						<span>Pushbar.js</span>
+						<a href="https://www.buymeacoffee.com/oncebot" target="_blank">☕️ Buy Me A Cofee</a>
+					</div>
 					<div class="small" style="margin-top: 10px;">Pushbar.js is a tiny javascript plugin for creating
 						sliding drawers in web apps
 					</div>
@@ -59,10 +62,19 @@
 					<div><button data-pushbar-target="top">Top pushbar</button></div>
 					<div><button data-pushbar-target="bottom">Bottom pushbar</button></div>
 					<pre><code>
+						<strong>New! [ IMPORTANT: USES HAS SLIGNT CHANGE, SEE BELOW ]</strong>
+						<br>
+						<br>
+						<ol>
+							<li>It's now even smaller and more effitient.</li>
+							<li>Code is now beautified.</li>
+							<li>Added to NPM.</li>
+						</ol>
+					</code></pre>
+					<pre><code>
 						<strong>Installation</strong>
 						<br>
-						<br>
-						
+						<br>		
 						<ol>
 							<li>Add the pushbar.css file to the head of your html.</li>
 							<li>Add the pushbar.js file to the head of your html or right before the closing body tag.</li>
@@ -84,13 +96,15 @@
 						<br>
 						<br>
 							<textarea disabled style="min-height: 550px;">
-								&nbsp <div data-pushbar-id="mypushbar1" class="pushbar from_left">
+								//CHANGE: Older version of pushbar used class="pushbar from_left"
+								&nbsp <div data-pushbar-id="mypushbar1" data-pushbar-direction="left">
 									&nbsp &nbsp	Push bar content 1
 
 									&nbsp &nbsp	<button data-pushbar-close>Close</button>
 								&nbsp </div>
 
-								&nbsp <div data-pushbar-id="mypushbar2" class="pushbar from_bottom">
+								//CHANGE: Older version of pushbar used class="pushbar from_bottom"
+								&nbsp <div data-pushbar-id="mypushbar2" data-pushbar-direction="bottom">
 									&nbsp &nbsp	Push bar content 2
 
 									&nbsp &nbsp	<button data-pushbar-close>Close</button>
@@ -109,17 +123,18 @@
 								&nbsp </div>
 							</textarea>
 					</code></pre>
-					<!-- 					<pre><code>
-                     <strong>How to use</strong>
-                     <br>
-                     <br>
-                     	<p>Your pushbar must have the class .pushbar and any of the directional classes: .from_left, .from_right, .from_top, .from_bottom to set the opening direction.</p>
-                     	<p>Pushbar also must have an attribute : data-pushbar-id , which must have a unique value for that pushbar.</p>
-                     	<p>Your pushbar open button must have an attribute : data-pushbar-target, with the name of the pushbar as value (same value as data-pushbar-id).</p>
-                     	<p>data-pushbar-close attribute can be used on any element to make it a close button for all pushbars.</p>
-                     	<p>Your main content must have the class .pushbar_main_content.</p>
-                     
-                     </code></pre> -->
+					<pre><code>
+						<strong>Direction attributes [NEW]</strong>
+						<br>
+						<br>
+						You can use 4 directional attributes in pushbar elements
+						<ol>
+								<li>data-pushbar-direction="left" So that the pushbar opens from left</li>
+								<li>data-pushbar-direction="right" So that the pushbar opens from right</li>
+								<li>data-pushbar-direction="top" So that the pushbar opens from top</li>
+								<li>data-pushbar-direction="bottom" So that the pushbar opens from bottom</li>
+						</ol>
+					</code></pre>
 					<pre><code>
 						<strong>Options</strong>
 						<br>
@@ -140,7 +155,7 @@
 							Open and close pushbar with api
 							<textarea disabled style="min-height: 300px;">
 								<script type="text/javascript">
-									var pushbar = & nbsp new Pushbar({
+									const pushbar = & nbsp new Pushbar({
                      	& nbsp & nbsp	blur: true,
                      	& nbsp & nbsp	overlay: true,
                      	& nbsp });
@@ -154,28 +169,14 @@
 						
 					</code></pre>
 					<pre><code>
-						<strong>Emitted events</strong>
+						<strong>Events</strong>
 						<br>
 						<br>
 
-							<p>'pushbar_opening': when a pushbar is opening, that pushbar element will emit this event.</p>
-							<p>'pushbar_closing': when a pushbar is closing, that pushbar element will emit this event.</p>
+							<p>'pushbar_opening': when a pushbar is opening, it will emit 'pushbar_opening' event with an object { element, id }, Where element will be the current pushbar element and the id is the current pushbar id.</p>
+							<p>'pushbar_closing': when a pushbar is closing, it will emit 'pushbar_closing' event with an object { element, id }, Where element will be the current pushbar element and the id is the current pushbar id.</p>
 						
 					</code></pre>
-					<!-- 
-                     <pre><code>
-                     	<strong>Important CSS classes for modification</strong>
-                     	<br>
-                     	<br>
-                     	
-                     	<ol>
-                     		<li>.from_left, .from_right: change the width for your sidebars.</li>
-                     		<li>.from_top, .from_bottom: change the height for your top and bottom bars.</li>
-                     		<li>.pushbar_overlay: change the background and opacity for the overlay.</li>
-                     		</li>
-                     	</ol>
-                     	
-                     </code></pre> -->
 				</div>
 			</div>
 			<div style="text-align: center; font-size: 12px; margin-bottom: 15px;"><a href="https://oncebot.com"
@@ -184,7 +185,7 @@
 	</main>
 	<script type="text/javascript" src="pushbar/pushbar.js"></script>
 	<script type="text/javascript">
-		var pushbar = new Pushbar({
+		const pushbar = new Pushbar({
 			blur: true,
 			overlay: true,
 		});

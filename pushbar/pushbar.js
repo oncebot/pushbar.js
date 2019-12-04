@@ -18,12 +18,12 @@ class Pushbar {
     }
 
     emitOpening() {
-        const event = new CustomEvent('pushbar_opening', { bubbles: true, detail: { pushbar: this.activeElement } });
+        const event = new CustomEvent('pushbar_opening', { bubbles: true, detail: { element: this.activeElement, id: this.activeId } });
         this.activeElement.dispatchEvent(event);
     }
 
     emitClosing() {
-        const event = new CustomEvent('pushbar_closing', { bubbles: true, detail: { pushbar: this.activeElement } });
+        const event = new CustomEvent('pushbar_closing', { bubbles: true, detail: { element: this.activeElement, id: this.activeId } });
         this.activeElement.dispatchEvent(event);
     }
 

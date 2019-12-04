@@ -1,22 +1,29 @@
+[☕️ Buy Me A Cofee](https://www.buymeacoffee.com/oncebot)
+
 # Pushbar.js
 Pushbar.js is a tiny javascript plugin for creating sliding drawers in web apps
 It is fully customizable and dependency free.You can use it as sidebar menus or option drawers.
 
 
+### NEW! [ IMPORTANT: USES HAS SLIGNT CHANGE, SEE BELOW ]
+
+1. It's now even smaller and more effitient
+2. Code is now beautified
+3. Added to NPM
+
 [Demo](https://oncebot.github.io/pushbar.js/)
 
 ![Pushbar. animated](https://oncebot.github.io/pushbar.js/animated.pushbar.js.gif)
-
-
 
 ### Installation
 
 1. Add the pushbar.css file to the head of your html.
 2. Add the pushbar.js file to the head of your html or right before the closing body tag.
 3. Add this code after the pushbar.js script tag to initialize the plugin.
+
 ```
 <script type="text/javascript">
-  var pushbar = new Pushbar({
+  const pushbar = new Pushbar({
         blur:true,
         overlay:true,
       });
@@ -26,18 +33,18 @@ It is fully customizable and dependency free.You can use it as sidebar menus or 
 
 ### Example HTML
 ```
-  <div data-pushbar-id="mypushbar1" class="pushbar from_left">
+  //CHANGE: Older version of pushbar used class="pushbar from_left"
+  <div data-pushbar-id="mypushbar1" data-pushbar-direction="left">
       Push bar content 1
-
       <button data-pushbar-close>Close</button>
   </div>
 
-  <div data-pushbar-id="mypushbar2" class="pushbar from_bottom">
+  //CHANGE: Older version of pushbar used class="pushbar from_bottom"
+  <div data-pushbar-id="mypushbar2" data-pushbar-direction="bottom">
       Push bar content 2
-
       <button data-pushbar-close>Close</button>
   </div>
-
+------------------------------------------------------
   <div class="pushbar_main_content">
       Main content of the page
 
@@ -51,6 +58,15 @@ It is fully customizable and dependency free.You can use it as sidebar menus or 
   </div>
  ```
 
+ ### Direction attributes [NEW]
+
+You can use 4 directional attributes in pushbar elements
+1. `data-pushbar-direction="left"` So that the pushbar opens from left
+2. `data-pushbar-direction="right"` So that the pushbar opens from right
+3. `data-pushbar-direction="top"` So that the pushbar opens from top
+4. `data-pushbar-direction="bottom"` So that the pushbar opens from bottom
+
+
 ### Options
 
 1. blur : set it to true for blur effect on the main content (Default:false)
@@ -61,7 +77,7 @@ It is fully customizable and dependency free.You can use it as sidebar menus or 
 Open and close pushbar with api
 ```
 <script type="text/javascript">
-  var pushbar =   new Pushbar({
+  const pushbar =   new Pushbar({
         blur:true,
         overlay:true,
       });
@@ -73,9 +89,10 @@ Open and close pushbar with api
 </script>
 ```
 
-### Emitted events 
-* 'pushbar_opening': when a pushbar is opening, that pushbar element will emit this event.
-* 'pushbar_closing': when a pushbar is closing, that pushbar element will emit this event.
+### Events 
+
+* 'pushbar_opening': when a pushbar is opening, it will emit 'pushbar_opening' event with an object { element, id }, Where element will be the current pushbar element and the id is the current pushbar id.
+* 'pushbar_closing': when a pushbar is closing, it will emit 'pushbar_closing' event with an object { element, id }, Where element will be the current pushbar element and the id is the current pushbar id.
 
 ### License
 
